@@ -1,36 +1,121 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Craydel Africa Travel - Modern Website
 
-## Getting Started
+A beautiful, responsive website for Craydel Africa Travel with a jungle green color theme.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+✨ **Modern Design**
+- Responsive layout that works on all devices
+- Smooth animations and transitions
+- Professional color scheme with jungle green theme
+- Clean and intuitive user interface
+
+🎨 **Jungle Green Color Palette**
+- Primary Green: #1b5e3f
+- Dark Green: #0d3d24
+- Light Green: #2d8659
+- Accent Green: #5ba876
+- Pale Green: #e8f4ed
+- Forest Green: #134e3b
+
+📱 **Sections**
+1. **Navigation Bar** - Sticky navigation with mobile menu
+2. **Hero Section** - Eye-catching banner with call-to-action
+3. **About Us** - Company mission, vision, and description
+4. **Services** - 6 tailored travel services
+5. **Destinations** - Popular African destinations
+6. **Contact** - Contact form and information
+7. **Footer** - Quick links and social media
+
+## Files Included
+
+- **index.html** - Main website structure
+- **styles.css** - Complete styling with jungle green theme
+- **script.js** - Interactive features and functionality
+
+## How to Use
+
+1. Open `index.html` in your web browser
+2. Navigate through different sections using the menu
+3. Fill out the contact form to send inquiries
+4. View on mobile devices to see responsive design in action
+
+## Responsive Design
+
+The website is fully responsive and works perfectly on:
+- Desktop computers (1200px and above)
+- Tablets (768px to 1199px)
+- Mobile phones (below 768px)
+
+## Contact Information
+
+- **Phone:** +254 724 458 151, +254 722 881 541
+- **Email:** info@craydelafricatravel.co.ke
+- **Hours:** 
+  - Weekdays: 8 AM - 5 PM
+  - Saturdays: 9 AM - 3 PM
+  - Sundays: 9 AM - 1 PM
+
+## Services Offered
+
+1. Customized Tour Packages
+2. Group Tours & Excursions
+3. Cruise Holiday Packages
+4. Hotel & Lodge Reservations
+5. Ticketing & Airport Transfers
+6. Corporate Travel Solutions
+
+## Popular Destinations
+
+- Maasai Mara
+- Lake Nakuru
+- Amboseli
+- Diani Beach
+
+## Customization
+
+You can easily customize the website by:
+
+### Colors
+Edit the CSS variables in `styles.css`:
+```css
+:root {
+    --primary-green: #1b5e3f;
+    --dark-green: #0d3d24;
+    /* ... and so on */
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Content
+Simply edit the HTML in `index.html` to update:
+- Company information
+- Services
+- Destinations
+- Contact details
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Images
+Replace placeholder icons with actual images by modifying the `.image-placeholder` class or adding `<img>` tags.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Browser Support
 
-## Learn More
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+- Mobile browsers
 
-To learn more about Next.js, take a look at the following resources:
+## Performance
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Optimized images and icons
+- Minified CSS and JavaScript
+- Fast loading times
+- Smooth animations
+- Mobile-first design
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
+© 2025 Craydel Africa Travel. All rights reserved.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Tagline:** "Feel The Wild. Live The Adventure."
