@@ -2,14 +2,28 @@
 
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import HeroSection from '@/components/sections/HeroSection';
+import CategoriesSection from '@/components/sections/CategoriesSection';
+import DestinationsSection from '@/components/sections/DestinationsSection';
+import PackagesSection from '@/components/sections/PackagesSection';
+import ServiceFeaturesSection from '@/components/sections/ServiceFeaturesSection';
+import PartnersSection from '@/components/sections/PartnersSection';
+import TestimonialsSection from '@/components/sections/TestimonialsSection';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col overflow-x-hidden w-full max-w-full">
+    <>
       <Navbar />
-      {/* Empty main area for now – only header and footer as requested */}
-      <div className="flex-1" />
+      <main className="w-full overflow-x-hidden">
+        <HeroSection />
+        <CategoriesSection />
+        <DestinationsSection />
+        <PackagesSection />
+        <ServiceFeaturesSection />
+        <PartnersSection />
+        <TestimonialsSection />
+      </main>
       <Footer />
-    </div>
+    </>
   );
 }
