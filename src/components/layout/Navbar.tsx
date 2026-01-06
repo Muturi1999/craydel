@@ -12,19 +12,24 @@ import {
   Instagram,
   Youtube,
 } from 'lucide-react';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+} from '@/components/ui/dropdown-menu';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
-  const [destinationsOpen, setDestinationsOpen] = useState(false);
-  const [packagesOpen, setPackagesOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 shadow-md">
+    <header className="fixed top-0 left-0 right-0 z-50 shadow-md bg-white">
       {/* Top Bar */}
       <div className="bg-green-900 text-white overflow-x-hidden">
-        <div className="flex justify-between items-center h-12 text-sm px-4 md:px-8" style={{ paddingLeft: '200px', paddingRight: '200px' }}>
+          <div className="flex justify-between items-center h-12 text-sm px-4 md:px-8 lg:pl-[200px] lg:pr-[200px]">
           <span className="text-xs md:text-sm">Kenya&apos;s best Travel and Tour Agency</span>
           <div className="flex items-center gap-3 md:gap-6">
             <div className="hidden lg:flex items-center justify-center flex-1 text-lg">
@@ -61,10 +66,10 @@ export default function Navbar() {
 
       {/* Main Header */}
       <nav className="bg-white shadow-sm">
-        <div className="flex justify-between items-center h-16 md:h-20 px-4 md:px-8 relative z-40" style={{ paddingLeft: '200px', paddingRight: '200px' }}>
+          <div className="flex justify-between items-center h-16 md:h-20 px-4 md:px-8 lg:px-0 relative z-40">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-2 md:gap-3 min-w-0 flex-shrink">
-              <div className="w-14 h-14 md:w-[50px] md:h-[50px] relative flex-shrink-0">
+            <Link href="/" className="flex items-center gap-2 md:gap-3 min-w-0 flex-shrink lg:ml-[200px]">
+              <div className="w-[100px] h-[100px] relative flex-shrink-0">
                 <img 
                   src="/assets/images/logo-removebg-preview.png" 
                   alt="Craydel Logo"
@@ -78,212 +83,486 @@ export default function Navbar() {
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-8">
-              <a
-                href="#home"
+              <Link
+                href="/"
                 className="text-green-900 font-medium hover:text-green-700 transition-colors px-4 py-2 uppercase text-sm"
               >
                 HOME
-              </a>
-              <a
-                href="#about"
+              </Link>
+              <Link
+                href="/about"
                 className="text-green-900 font-medium hover:text-green-700 transition-colors px-4 py-2 uppercase text-sm"
               >
                 ABOUT US
-              </a>
+              </Link>
 
-              {/* Services Dropdown */}
-              <div
-                className="relative"
-                onMouseEnter={() => setServicesOpen(true)}
-                onMouseLeave={() => setServicesOpen(false)}
-              >
-                <button className="text-green-900 font-medium hover:text-green-700 transition-colors flex items-center gap-1 px-4 py-2 uppercase text-sm">
-                  SERVICES
-                  <ChevronDown className="w-4 h-4" />
-                </button>
-                {servicesOpen && (
-                  <div className="absolute top-full mt-2 bg-white shadow-xl rounded-lg z-[9999] border border-gray-200" style={{ left: 'calc(50% - 425px)', width: '1050px', maxHeight: '730px', overflowY: 'auto' }}>
-                    <div className="grid grid-cols-3 gap-12 pt-12 px-12 pb-12">
-                      {/* Core Travel Services */}
-                      <div>
-                        <h4 className="text-base font-bold text-green-900 mb-6 pb-3 border-b-2 border-green-400">Core Travel Services</h4>
-                        <a href="#services" className="block py-3 text-sm text-gray-700 hover:text-green-900 hover:font-medium transition">Safari Tours & Game Drives</a>
-                        <a href="#services" className="block py-2 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Hotel & Lodge Reservations</a>
-                        <a href="#services" className="block py-2 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Airport Transfers & Transportation</a>
-                        <a href="#services" className="block py-2 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Flight Ticketing</a>
-                        <a href="#services" className="block py-2 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Visa Processing & Assistance</a>
-                        <a href="#services" className="block py-2 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Travel Insurance</a>
-                      </div>
-                      
-                      {/* Specialized Services */}
-                      <div>
-                        <h4 className="text-base font-bold text-green-900 mb-6 pb-3 border-b-2 border-green-400">Specialized Services</h4>
-                        <a href="#services" className="block py-3 text-sm text-gray-700 hover:text-green-900 hover:font-medium transition">Customized Tour Packages</a>
-                        <a href="#services" className="block py-2 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Corporate Travel Solutions</a>
-                        <a href="#services" className="block py-2 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Honeymoon Packages</a>
-                        <a href="#services" className="block py-2 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Group Tours & Excursions</a>
-                        <a href="#services" className="block py-2 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Cruise Holiday Packages</a>
-                        <a href="#services" className="block py-2 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Mountain Climbing Expeditions</a>
-                        <a href="#services" className="block py-2 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Beach Holiday Packages</a>
-                      </div>
-                      
-                      {/* Additional Services */}
-                      <div>
-                        <h4 className="text-base font-bold text-green-900 mb-6 pb-3 border-b-2 border-green-400">Additional & Specialty</h4>
-                        <a href="#services" className="block py-3 text-sm text-gray-700 hover:text-green-900 hover:font-medium transition">Photography Safaris</a>
-                        <a href="#services" className="block py-2 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Bird Watching Tours</a>
-                        <a href="#services" className="block py-2 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Hot Air Balloon Safaris</a>
-                        <a href="#services" className="block py-2 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Car Hire & 4x4 Rentals</a>
-                        <a href="#services" className="block py-2 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Conference & Event Planning</a>
-                        <a href="#services" className="block py-2 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Educational Tours</a>
-                        <a href="#services" className="block py-2 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Luxury Private Jet Charters</a>
-                      </div>
+              {/* Services Dropdown with shadcn */}
+              <DropdownMenu>
+                <DropdownMenuTrigger className="text-green-900 font-medium hover:text-green-700 transition-colors flex items-center gap-1 px-4 py-2 uppercase text-sm outline-none">
+                    SERVICES
+                    <ChevronDown className="w-4 h-4" />
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent 
+                    className="w-[1050px] max-h-[730px] overflow-y-auto p-8 m-4 pb-10"
+                    align="center"
+                  >
+                  <div className="grid grid-cols-3 gap-12">
+                    {/* Core Travel Services */}
+                    <div className="pl-6">
+                      <DropdownMenuLabel className="text-base font-bold text-green-900 mb-5 pb-3 border-b-2 border-green-400">
+                        Core Travel Services
+                      </DropdownMenuLabel>
+                      <DropdownMenuItem asChild>
+                        <a href="#services" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Safari Tours & Game Drives
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#services" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Hotel & Lodge Reservations
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#services" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Airport Transfers & Transportation
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#services" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Flight Ticketing
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#services" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Visa Processing & Assistance
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#services" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Travel Insurance
+                        </a>
+                      </DropdownMenuItem>
+                    </div>
+                    
+                    {/* Specialized Services */}
+                    <div className="pl-6">
+                      <DropdownMenuLabel className="text-base font-bold text-green-900 mb-5 pb-3 border-b-2 border-green-400">
+                        Specialized Services
+                      </DropdownMenuLabel>
+                      <DropdownMenuItem asChild>
+                        <a href="#services" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Customized Tour Packages
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#services" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Corporate Travel Solutions
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#services" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Honeymoon Packages
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#services" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Group Tours & Excursions
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#services" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Cruise Holiday Packages
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#services" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Mountain Climbing Expeditions
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#services" className="block py-2 text-sm text-gray-700 hover:text-green-900 cursor-pointer">
+                          Beach Holiday Packages
+                        </a>
+                      </DropdownMenuItem>
+                    </div>
+                    
+                    {/* Additional Services */}
+                    <div className="pl-6">
+                      <DropdownMenuLabel className="text-base font-bold text-green-900 mb-5 pb-3 border-b-2 border-green-400">
+                        Additional & Specialty
+                      </DropdownMenuLabel>
+                      <DropdownMenuItem asChild>
+                        <a href="#services" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Photography Safaris
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#services" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Bird Watching Tours
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#services" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Hot Air Balloon Safaris
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#services" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Car Hire & 4x4 Rentals
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#services" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Conference & Event Planning
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#services" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Educational Tours
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#services" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Luxury Private Jet Charters
+                        </a>
+                      </DropdownMenuItem>
                     </div>
                   </div>
-                )}
-              </div>
+                </DropdownMenuContent>
+              </DropdownMenu>
 
-              {/* Destinations Dropdown */}
-              <div
-                className="relative"
-                onMouseEnter={() => setDestinationsOpen(true)}
-                onMouseLeave={() => setDestinationsOpen(false)}
-              >
-                <button className="text-green-900 font-medium hover:text-green-700 transition-colors flex items-center gap-1 px-4 py-2 uppercase text-sm">
-                  DESTINATIONS
-                  <ChevronDown className="w-4 h-4" />
-                </button>
-                {destinationsOpen && (
-                  <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-white shadow-xl rounded-lg z-[9999] border border-gray-200" style={{ width: '1050px', maxHeight: '700px', overflowY: 'auto' }}>
-                    <div className="grid grid-cols-3 gap-12 p-12">
-                      {/* Kenya Destinations */}
-                      <div>
-                        <h4 className="text-base font-bold text-green-900 mb-6 pb-3 border-b-2 border-green-400">Kenya Destinations</h4>
-                        <a href="#destinations" className="block py-3 text-sm text-gray-700 hover:text-green-900 hover:font-medium transition">Maasai Mara National Reserve</a>
-                        <a href="#destinations" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Amboseli National Park</a>
-                        <a href="#destinations" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Lake Nakuru National Park</a>
-                        <a href="#destinations" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Tsavo East & West</a>
-                        <a href="#destinations" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Samburu National Reserve</a>
-                        <a href="#destinations" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Lake Naivasha</a>
-                        <a href="#destinations" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Hell's Gate National Park</a>
-                        <a href="#destinations" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Diani Beach</a>
-                        <a href="#destinations" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Lamu Island</a>
-                      </div>
-                      
-                      {/* Tanzania & Regional */}
-                      <div>
-                        <h4 className="text-base font-bold text-green-900 mb-6 pb-3 border-b-2 border-green-400">Tanzania Destinations</h4>
-                        <a href="#destinations" className="block py-3 text-sm text-gray-700 hover:text-green-900 hover:font-medium transition">Serengeti National Park</a>
-                        <a href="#destinations" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Ngorongoro Crater</a>
-                        <a href="#destinations" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Tarangire National Park</a>
-                        <a href="#destinations" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Lake Manyara National Park</a>
-                        <a href="#destinations" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Mount Kilimanjaro</a>
-                        <a href="#destinations" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Zanzibar Island</a>
-                        <a href="#destinations" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Pemba Island</a>
-                        <a href="#destinations" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Arusha</a>
-                      </div>
-                      
-                      {/* Other African Destinations */}
-                      <div>
-                        <h4 className="text-base font-bold text-green-900 mb-6 pb-3 border-b-2 border-green-400">Other African Destinations</h4>
-                        <a href="#destinations" className="block py-3 text-sm text-gray-700 hover:text-green-900 hover:font-medium transition">Rwanda - Gorilla Trekking</a>
-                        <a href="#destinations" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Uganda - Bwindi & Queen Elizabeth</a>
-                        <a href="#destinations" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">South Africa - Kruger</a>
-                        <a href="#destinations" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Botswana - Okavango Delta</a>
-                        <a href="#destinations" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Victoria Falls</a>
-                        <a href="#destinations" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Namibia - Etosha</a>
-                        <a href="#destinations" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Egypt - Pyramids & Nile</a>
-                        <a href="#destinations" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Watamu & Malindi</a>
-                      </div>
+              {/* Destinations Dropdown with shadcn */}
+              <DropdownMenu>
+                <DropdownMenuTrigger className="text-green-900 font-medium hover:text-green-700 transition-colors flex items-center gap-1 px-4 py-2 uppercase text-sm outline-none">
+                    DESTINATIONS
+                    <ChevronDown className="w-4 h-4" />
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent 
+                    className="w-[1050px] max-h-[700px] overflow-y-auto p-8 m-4 pb-10"
+                    align="center"
+                  >
+                  <div className="grid grid-cols-3 gap-12">
+                    {/* Kenya Destinations */}
+                    <div className="pl-6">
+                      <DropdownMenuLabel className="text-base font-bold text-green-900 mb-5 pb-3 border-b-2 border-green-400">
+                        Kenya Destinations
+                      </DropdownMenuLabel>
+                      <DropdownMenuItem asChild>
+                        <a href="#destinations" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Maasai Mara National Reserve
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#destinations" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Amboseli National Park
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#destinations" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Lake Nakuru National Park
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#destinations" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Tsavo East & West
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#destinations" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Samburu National Reserve
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#destinations" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Lake Naivasha
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#destinations" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Hell's Gate National Park
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#destinations" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Diani Beach
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#destinations" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Lamu Island
+                        </a>
+                      </DropdownMenuItem>
+                    </div>
+                    
+                    {/* Tanzania Destinations */}
+                    <div className="pl-6">
+                      <DropdownMenuLabel className="text-base font-bold text-green-900 mb-5 pb-3 border-b-2 border-green-400">
+                        Tanzania Destinations
+                      </DropdownMenuLabel>
+                      <DropdownMenuItem asChild>
+                        <a href="#destinations" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Serengeti National Park
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#destinations" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Ngorongoro Crater
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#destinations" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Tarangire National Park
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#destinations" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Lake Manyara National Park
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#destinations" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Mount Kilimanjaro
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#destinations" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Zanzibar Island
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#destinations" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Pemba Island
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#destinations" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Arusha
+                        </a>
+                      </DropdownMenuItem>
+                    </div>
+                    
+                    {/* Other African Destinations */}
+                    <div className="pl-6">
+                      <DropdownMenuLabel className="text-base font-bold text-green-900 mb-5 pb-3 border-b-2 border-green-400">
+                        Other African Destinations
+                      </DropdownMenuLabel>
+                      <DropdownMenuItem asChild>
+                        <a href="#destinations" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Rwanda - Gorilla Trekking
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#destinations" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Uganda - Bwindi & Queen Elizabeth
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#destinations" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          South Africa - Kruger
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#destinations" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Botswana - Okavango Delta
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#destinations" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Victoria Falls
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#destinations" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Namibia - Etosha
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#destinations" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Egypt - Pyramids & Nile
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#destinations" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Watamu & Malindi
+                        </a>
+                      </DropdownMenuItem>
                     </div>
                   </div>
-                )}
-              </div>
+                </DropdownMenuContent>
+              </DropdownMenu>
 
-              {/* Tour Packages Dropdown */}
-              <div
-                className="relative"
-                onMouseEnter={() => setPackagesOpen(true)}
-                onMouseLeave={() => setPackagesOpen(false)}
-              >
-                <button className="text-green-900 font-medium hover:text-green-700 transition-colors flex items-center gap-1 px-4 py-2 uppercase text-sm">
-                  TOUR PACKAGES
-                  <ChevronDown className="w-4 h-4" />
-                </button>
-                {packagesOpen && (
-                  <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-white shadow-xl rounded-lg z-[9999] border border-gray-200" style={{ width: '1050px', maxHeight: '750px', overflowY: 'auto' }}>
-                    <div className="grid grid-cols-4 gap-10 p-10">
-                      {/* Safari Packages */}
-                      <div>
-                        <h4 className="text-base font-bold text-green-900 mb-6 pb-3 border-b-2 border-green-400">Safari Packages</h4>
-                        <a href="#packages" className="block py-3 text-sm text-gray-700 hover:text-green-900 hover:font-medium transition">Classic Kenya Safari (5-7 Days)</a>
-                        <a href="#packages" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Tanzania Wildlife Safari (7-10 Days)</a>
-                        <a href="#packages" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Combined Kenya & Tanzania (10-14 Days)</a>
-                        <a href="#packages" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Big Five Safari Experience</a>
-                        <a href="#packages" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Great Migration Safari (Seasonal)</a>
-                        <a href="#packages" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Luxury Safari Packages</a>
-                        <a href="#packages" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Budget Camping Safaris</a>
-                        <a href="#packages" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Flying Safari Packages</a>
-                        <a href="#packages" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Family Safari Adventures</a>
-                        <a href="#packages" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Photography Safari Tours</a>
-                      </div>
-                      
-                      {/* Beach & Safari Combos */}
-                      <div>
-                        <h4 className="text-base font-bold text-green-900 mb-6 pb-3 border-b-2 border-green-400">Beach & Safari Combos</h4>
-                        <a href="#packages" className="block py-3 text-sm text-gray-700 hover:text-green-900 hover:font-medium transition">Safari & Zanzibar Beach Holiday</a>
-                        <a href="#packages" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Safari & Diani Beach Escape</a>
-                        <a href="#packages" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Safari & Lamu Island Retreat</a>
-                        <a href="#packages" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Mombasa Beach & Safari Package</a>
-                        
-                        <h4 className="text-base font-bold text-green-900 mb-6 pb-3 border-b-2 border-green-400 mt-8">Adventure Packages</h4>
-                        <a href="#packages" className="block py-3 text-sm text-gray-700 hover:text-green-900 hover:font-medium transition">Mount Kilimanjaro Climbing (5-9 Days)</a>
-                        <a href="#packages" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Mount Kenya Trekking</a>
-                        <a href="#packages" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Gorilla Trekking Rwanda/Uganda</a>
-                        <a href="#packages" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Hot Air Balloon Safari Package</a>
-                        <a href="#packages" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Walking Safari Adventures</a>
-                      </div>
-                      
-                      {/* Specialty Packages */}
-                      <div>
-                        <h4 className="text-base font-bold text-green-900 mb-6 pb-3 border-b-2 border-green-400">Specialty Packages</h4>
-                        <a href="#packages" className="block py-3 text-sm text-gray-700 hover:text-green-900 hover:font-medium transition">Honeymoon Safari & Beach Package</a>
-                        <a href="#packages" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Family Safari Packages</a>
-                        <a href="#packages" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Corporate Team Building Safaris</a>
-                        <a href="#packages" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Cultural & Community Tours</a>
-                        <a href="#packages" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Bird Watching Expeditions</a>
-                        <a href="#packages" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Wellness & Yoga Retreats</a>
-                        <a href="#packages" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Luxury Train Journeys</a>
-                      </div>
-                      
-                      {/* Cruise & Water Packages */}
-                      <div>
-                        <h4 className="text-base font-bold text-green-900 mb-6 pb-3 border-b-2 border-green-400">Cruise & Water Packages</h4>
-                        <a href="#packages" className="block py-3 text-sm text-gray-700 hover:text-green-900 hover:font-medium transition">Indian Ocean Cruise Packages</a>
-                        <a href="#packages" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Dhow Sailing Expeditions</a>
-                        <a href="#packages" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Lake Victoria Cruises</a>
-                        <a href="#packages" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Diving & Snorkeling Packages</a>
-                        
-                        <h4 className="text-base font-bold text-green-900 mb-6 pb-3 border-b-2 border-green-400 mt-8">Extended Tours</h4>
-                        <a href="#packages" className="block py-3 text-sm text-gray-700 hover:text-green-900 hover:font-medium transition">East African Grand Tour (21+ Days)</a>
-                        <a href="#packages" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Africa Highlights (Multi-Country)</a>
-                        <a href="#packages" className="block py-1.5 text-sm text-gray-800 hover:text-green-900 hover:font-medium transition">Round-the-World Safari Tours</a>
-                      </div>
+              {/* Tour Packages Dropdown with shadcn */}
+              <DropdownMenu>
+                <DropdownMenuTrigger className="text-green-900 font-medium hover:text-green-700 transition-colors flex items-center gap-1 px-4 py-2 uppercase text-sm outline-none">
+                    TOUR PACKAGES
+                    <ChevronDown className="w-4 h-4" />
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent 
+                    className="w-[1050px] max-h-[750px] overflow-y-auto p-8 m-4 pb-10"
+                    align="center"
+                  >
+                  <div className="grid grid-cols-4 gap-12">
+                    {/* Safari Packages */}
+                    <div className="pl-6">
+                      <DropdownMenuLabel className="text-base font-bold text-green-900 mb-5 pb-3 border-b-2 border-green-400">
+                        Safari Packages
+                      </DropdownMenuLabel>
+                      <DropdownMenuItem asChild>
+                        <a href="#packages" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Classic Kenya Safari (5-7 Days)
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#packages" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Tanzania Wildlife Safari (7-10 Days)
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#packages" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Combined Kenya & Tanzania
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#packages" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Big Five Safari Experience
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#packages" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Great Migration Safari
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#packages" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Luxury Safari Packages
+                        </a>
+                      </DropdownMenuItem>
+                    </div>
+                    
+                    {/* Beach & Adventure */}
+                    <div className="pl-6">
+                      <DropdownMenuLabel className="text-base font-bold text-green-900 mb-5 pb-3 border-b-2 border-green-400">
+                        Beach & Adventure
+                      </DropdownMenuLabel>
+                      <DropdownMenuItem asChild>
+                        <a href="#packages" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Safari & Zanzibar Beach
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#packages" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Safari & Diani Beach
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#packages" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Mount Kilimanjaro Climbing
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#packages" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Mount Kenya Trekking
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#packages" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Gorilla Trekking
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#packages" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Hot Air Balloon Safari
+                        </a>
+                      </DropdownMenuItem>
+                    </div>
+                    
+                    {/* Specialty Packages */}
+                    <div className="pl-6">
+                      <DropdownMenuLabel className="text-base font-bold text-green-900 mb-5 pb-3 border-b-2 border-green-400">
+                        Specialty Packages
+                      </DropdownMenuLabel>
+                      <DropdownMenuItem asChild>
+                        <a href="#packages" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Honeymoon Safari & Beach
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#packages" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Family Safari Packages
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#packages" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Corporate Team Building
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#packages" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Cultural & Community Tours
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#packages" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Bird Watching Expeditions
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#packages" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Wellness & Yoga Retreats
+                        </a>
+                      </DropdownMenuItem>
+                    </div>
+                    
+                    {/* Extended Tours */}
+                    <div className="pl-6">
+                      <DropdownMenuLabel className="text-base font-bold text-green-900 mb-5 pb-3 border-b-2 border-green-400">
+                        Extended Tours
+                      </DropdownMenuLabel>
+                      <DropdownMenuItem asChild>
+                        <a href="#packages" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Indian Ocean Cruise
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#packages" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Dhow Sailing Expeditions
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#packages" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Lake Victoria Cruises
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#packages" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Diving & Snorkeling
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#packages" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          East African Grand Tour
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="#packages" className="block py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-900 hover:rounded cursor-pointer transition-all">
+                          Round-the-World Safari
+                        </a>
+                      </DropdownMenuItem>
                     </div>
                   </div>
-                )}
-              </div>
+                </DropdownMenuContent>
+              </DropdownMenu>
 
-              <a
-                href="#contact"
+              <Link
+                href="/contact"
                 className="text-green-900 font-medium hover:text-green-700 transition-colors px-4 py-2 uppercase text-sm"
               >
                 CONTACT US
-              </a>
+              </Link>
 
               {/* Search Icon */}
               <button
-                className="text-green-900 p-2 hover:text-green-700 transition-colors ml-2"
+                className="text-green-900 p-2 hover:text-green-700 transition-colors ml-2 lg:mr-[200px]"
                 onClick={() => setSearchOpen(!searchOpen)}
                 aria-label="Toggle search"
               >

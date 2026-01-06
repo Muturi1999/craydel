@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="w-full overflow-x-hidden">
+      <main className="w-full overflow-x-hidden pt-[112px]">
         <HeroSection />
         <CategoriesSection />
         <DestinationsSection />

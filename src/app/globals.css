@@ -72,20 +72,3 @@ body {
     opacity: 1;
   }
 }
-
-/* Utility classes */
-.btn {
-  @apply px-8 py-3 rounded-full font-semibold transition-all duration-300 inline-block;
-}
-
-.btn-primary {
-  @apply bg-[var(--accent-green)] text-white hover:bg-[var(--light-green)] hover:shadow-lg hover:-translate-y-1;
-}
-
-.section-title {
-  @apply text-4xl font-bold text-center mb-12 text-[var(--primary-green)];
-}
-
-.card-shadow {
-  @apply shadow-md hover:shadow-xl transition-shadow duration-300;
-}

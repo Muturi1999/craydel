@@ -2,7 +2,7 @@
 
 export default function HeroSection() {
   return (
-    <section id="home" className="relative w-full h-screen flex items-center justify-center">
+    <section id="home" className="relative w-full h-[70vh] flex items-center justify-center">
       {/* Background Video with Overlay */}
       <video
         autoPlay
