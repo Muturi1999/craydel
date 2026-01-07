@@ -13,79 +13,79 @@ export default function DestinationsSection() {
       id: 1,
       title: 'Maasai Mara National Reserve',
       description: 'Experience the legendary Great Migration and witness the dramatic river crossings of millions of wildebeest and zebras in one of Africa\'s most spectacular ecosystems.',
-      image: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=500&h=350&fit=crop',
+      image: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=500&h=350&fit=crop&q=80', // Safari vehicle with wildlife
     },
     {
       id: 2,
       title: 'Amboseli National Park',
       description: 'Stand beneath the snow-capped Mount Kilimanjaro and encounter massive herds of African elephants roaming the vast Amboseli plains with pristine views.',
-      image: 'https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=500&h=350&fit=crop',
+      image: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=500&h=350&fit=crop&q=80', // Elephants with Kilimanjaro
     },
     {
       id: 3,
       title: 'Lake Nakuru National Park',
       description: 'Marvel at the stunning spectacle of thousands of pink flamingos flocking around Lake Nakuru\'s alkaline waters, surrounded by diverse wildlife.',
-      image: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=500&h=350&fit=crop',
+      image: 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=500&h=350&fit=crop&q=80', // Flamingos at lake
     },
     {
       id: 4,
       title: 'Tsavo East & West National Parks',
       description: 'Explore one of the world\'s largest national parks, famous for its red elephant herds, stunning volcanic landscapes, and the dramatic Mzima Springs.',
-      image: 'https://images.unsplash.com/photo-1504681869696-d977e3a34533?w=500&h=350&fit=crop',
+      image: 'https://images.unsplash.com/photo-1504681869696-d977e3a34533?w=500&h=350&fit=crop&q=80', // Red landscape with elephants
     },
     {
       id: 5,
       title: 'Samburu National Reserve',
       description: 'Discover unique wildlife adapted to arid landscapes including the Samburu zebra, reticulated giraffe, and gerenuk in this remote northern reserve.',
-      image: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=500&h=350&fit=crop',
+      image: 'https://images.unsplash.com/photo-1574781330858-2c9947f16c1e?w=500&h=350&fit=crop&q=80', // Giraffe in arid landscape
     },
     {
       id: 6,
       title: 'Lake Naivasha',
       description: 'Relax beside this serene freshwater lake surrounded by lush forests and abundant birdlife. Perfect for boat safaris and wildlife encounters.',
-      image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&h=350&fit=crop',
+      image: 'https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=500&h=350&fit=crop&q=80', // Serene freshwater lake
     },
     {
       id: 7,
       title: 'Hell\'s Gate National Park',
       description: 'Hike through dramatic red cliffs and encounter wildlife roaming freely. This unique park offers adventure activities and geothermal wonders.',
-      image: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=500&h=350&fit=crop',
+      image: 'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=500&h=350&fit=crop&q=80', // Red cliffs/canyon
     },
     {
       id: 8,
       title: 'Diani Beach (Mombasa Coast)',
       description: 'Unwind on pristine white-sand beaches with crystal-clear turquoise waters. Perfect for snorkeling, diving, and experiencing coastal Swahili culture.',
-      image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&h=350&fit=crop',
+      image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&h=350&fit=crop&q=80', // Tropical beach
     },
     {
       id: 9,
       title: 'Lamu Island',
       description: 'Step back in time on this UNESCO World Heritage Site with narrow streets, historic architecture, and traditional dhow sailing experiences.',
-      image: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=500&h=350&fit=crop',
+      image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&h=350&fit=crop&q=80', // Historic architecture/dhow
     },
     {
       id: 10,
       title: 'Watamu & Malindi',
       description: 'Explore charming coastal towns with beautiful beaches, vibrant coral reefs, marine parks, and rich Swahili heritage blended with modern amenities.',
-      image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&h=350&fit=crop',
+      image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=500&h=350&fit=crop&q=80', // Coastal beach with coral
     },
     {
       id: 11,
       title: 'Mount Kenya',
       description: 'Challenge yourself to climb Africa\'s second-highest peak with breathtaking alpine scenery, diverse ecosystems, and an unforgettable adventure.',
-      image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&h=350&fit=crop',
+      image: 'https://images.unsplash.com/photo-1464822759844-d150ad6bf8e0?w=500&h=350&fit=crop&q=80', // Mountain peak
     },
     {
       id: 12,
       title: 'Nairobi National Park',
       description: 'Discover wildlife viewing just minutes from Kenya\'s capital city. See lions, rhinos, giraffes, and buffalo against Nairobi\'s unique skyline backdrop.',
-      image: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=500&h=350&fit=crop',
+      image: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=500&h=350&fit=crop&q=80', // Wildlife in park setting
     },
     {
       id: 13,
       title: 'Ol Pejeta Conservancy',
       description: 'Visit a world-leading conservation center home to the last northern white rhinos, chimpanzees, and other endangered species in a community-based reserve.',
-      image: 'https://images.unsplash.com/photo-1504681869696-d977e3a34533?w=500&h=350&fit=crop',
+      image: 'https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=500&h=350&fit=crop&q=80', // Rhino conservation
     },
   ];
 
@@ -158,7 +158,7 @@ export default function DestinationsSection() {
           <h2 className="text-4xl md:text-5xl font-extrabold text-green-900 mb-6">
             Explore Our Destinations
           </h2>
-          <div className="flex justify-center">
+          <div className="flex justify-center" style={{ paddingTop: '30px', paddingBottom: '30px' }}>
             <p className="text-base md:text-lg text-gray-700 max-w-3xl font-medium leading-relaxed">
               Discover the most stunning and diverse travel destinations across Kenya and East Africa
             </p>

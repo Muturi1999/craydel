@@ -31,7 +31,7 @@ export default function PartnersSection() {
 
   return (
     <section className="py-16 md:py-20 bg-white" style={{ marginTop: '20px', paddingBottom: '20px' }}>
-      <div style={{ marginLeft: '50px', marginRight: '50px' }}>
+      <div style={{ marginLeft: '200px', marginRight: '200px' }}>
         {/* Carousel */}
         <div className="flex items-center gap-4">
           {/* Carousel Viewport */}
