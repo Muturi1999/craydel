@@ -8,7 +8,7 @@ export default function PackagesSection() {
     {
       id: 1,
       title: '3 Days, 2 Nights Masai Mara Safari Adventure',
-      price: 'From $2,478',
+      price: 'Ksh 750',
       description: 'All-Inclusive Safari Experience Embark on the ultimate African safari and witness...',
       image: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&h=400&fit=crop&q=80', // Elephant walking towards safari vehicle
       fullDescription: 'Experience the legendary Maasai Mara with expert guides and comfortable accommodations.',

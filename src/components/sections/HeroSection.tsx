@@ -28,7 +28,7 @@ export default function HeroSection() {
             &quot;Travel is the only thing you buy that makes you richer. Let us create your perfect African adventure.&quot;
           </p>
         </div>
-        <a href="#contact" className="inline-block bg-green-600 hover:bg-green-700 text-white font-bold px-8 sm:px-12 md:px-16 py-4 sm:py-5 md:py-6 rounded text-base sm:text-lg transition transform hover:scale-105 shadow-lg hover:shadow-xl">
+        <a href="#contact" className="inline-block bg-green-600 hover:bg-green-700 text-white font-bold text-base sm:text-lg transition transform hover:scale-105 shadow-lg hover:shadow-xl" style={{ padding: '5px' }}>
           Plan Your Journey
         </a>
       </div>
